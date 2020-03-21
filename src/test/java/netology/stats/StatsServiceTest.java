@@ -14,6 +14,7 @@ class StatsServiceTest {
         int actual = service.calculateSum(sales);
         assertEquals(expectedSum, actual);
     }
+
     @Test
     void calculateMiddleSum() {
         ru.netology.stats.StatsService service = new ru.netology.stats.StatsService();
@@ -29,6 +30,7 @@ class StatsServiceTest {
         int actual = service.findMonthMax(sales);
         assertEquals(expectedMonthMax, actual);
     }
+
     @Test
     void findMonthMin() {
         ru.netology.stats.StatsService service = new ru.netology.stats.StatsService();
@@ -36,6 +38,7 @@ class StatsServiceTest {
         int actual = service.findMonthMin(sales);
         assertEquals(expectedMonthMin, actual);
     }
+
     @Test
     void findOverMiddleSum() {
         ru.netology.stats.StatsService service = new ru.netology.stats.StatsService();
@@ -43,6 +46,7 @@ class StatsServiceTest {
         int actual = service.findOverMiddleSum(sales);
         assertEquals(expectedOverMiddleSum, actual);
     }
+
     @Test
     void findUnderMiddleSum() {
         ru.netology.stats.StatsService service = new ru.netology.stats.StatsService();

@@ -2,81 +2,94 @@ package ru.netology.stats;
 
 public class StatsService {
     public int calculateSum(int[] sales) {
-        int Sum = 0;
+        int sum = 0;
         for (int sale : sales) {
-            Sum += sale;
+            sum += sale;
         }
-        System.out.println("Сумма всех продаж: " + Sum);
-        return Sum;
+
+        System.out.println("Сумма всех продаж: " + sum);
+        return sum;
+
     }
 
+
     public int calculateMiddleSum(int[] sales) {
-        int MiddleSum = calculateSum(sales) / 12; {
-        System.out.println("Средняя сумма продаж в месяц: " + MiddleSum); }
-        return MiddleSum;
+        int middleSum = calculateSum(sales) / 12;
+        {
+            System.out.println("Средняя сумма продаж в месяц: " + middleSum);
+        }
+
+        return middleSum;
+
     }
 
 
     public int findMonthMax(int[] sales) {
-        int SalesMax = sales[0];
-        int Month = 0;
-        int MonthMax = 1;
+        int salesMax = sales[0];
+        int month = 0;
+        int monthMax = 1;
         for (int sale : sales) {
-            Month++;
-            if (SalesMax <= sale) {
-                SalesMax = sale;
-                MonthMax = Month;
+            month++;
+            if (salesMax <= sale) {
+                salesMax = sale;
+                monthMax = month;
             }
+
         }
-        System.out.println("Максимальная продажа в месяце: " + MonthMax);
-        return MonthMax;
+
+        System.out.println("Максимальная продажа в месяце: " + monthMax);
+        return monthMax;
     }
+
 
     public int findMonthMin(int[] sales) {
-        int SalesMin = sales[0];
-        int Month = 0;
-        int MonthMin = 1;
+        int salesMin = sales[0];
+        int month = 0;
+        int monthMin = 1;
         for (int sale : sales) {
-            Month++;
-            if (SalesMin >= sale) {
-                SalesMin = sale;
-                MonthMin = Month;
+            month++;
+            if (salesMin >= sale) {
+                salesMin = sale;
+                monthMin = month;
             }
+
         }
-        System.out.println("Минимальная продажа в месяце: " + MonthMin);
-        return MonthMin;
+
+        System.out.println("Минимальная продажа в месяце: " + monthMin);
+        return monthMin;
     }
 
+
     public int findOverMiddleSum(int[] sales) {
-        int MiddleSum = calculateMiddleSum(sales);
-        int Count = 0;
-        int OverMiddleSum = 0;
-        for (int Sale : sales) {
-            if (MiddleSum < Sale) {
-                Count++;
-                OverMiddleSum = Count;
+        int middleSum = calculateMiddleSum(sales);
+        int count = 0;
+        for (int sale : sales) {
+            if (middleSum < sale) {
+                count += 1;
             }
+
         }
-        System.out.println("Количество месяцев, в которых продажи были ниже среднего: " + OverMiddleSum);
-        return OverMiddleSum;
+
+        System.out.println("Количество месяцев, в которых продажи были ниже среднего: " + count);
+        return count;
     }
 
     public int findUnderMiddleSum(int[] sales) {
-        int MiddleSum = calculateMiddleSum(sales);
-        int Count = 0;
-        int UnderMiddleSum = 0;
+        int middleSum = calculateMiddleSum(sales);
+        int count = 0;
         for (int sale : sales) {
-            if (MiddleSum > sale) {
-                Count++;
-                UnderMiddleSum = Count;
+            if (middleSum > sale) {
+                count += 1;
             }
+
         }
-        System.out.println("Количество месяцев, в которых продажи были выше среднего: " + UnderMiddleSum);
-        return UnderMiddleSum;
+
+        System.out.println("Количество месяцев, в которых продажи были выше среднего: " + count);
+        return count;
     }
 
 
-    }
+}
 
 
 
